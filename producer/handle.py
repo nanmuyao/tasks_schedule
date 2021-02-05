@@ -9,15 +9,14 @@ from tasks_schedule.producer.scene import Scene
 from tasks_schedule.producer.task import TaskFactory
 
 
-def schedule_create_task(node):
-    # task = TaskFactory.create_task(Node(symbol))
-    print("schedule_create_task")
+def on_loop(var):
+    print(f'on_loop, {var}')
 
 
 def create_task(symbol):
     #  创建任务
     node = Node(symbol)
-    Scene.main_loop(schedule_create_task, node)
+    Scene.main_loop(on_loop, node)
 
 
 symbols = ['BTC/USDT', 'BTC/USDS']

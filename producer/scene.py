@@ -11,14 +11,12 @@ class Scene(MetaClass):
         pass
 
     @classmethod
-    def main_loop(cls, on_loop, *args, **kwargs):
-        print(on_loop)
+    def main_loop(cls, on_loop, node):
         while True:
             print(
                 f'create_task pid {os.getpid()}, '
                 f'tid {threading.get_ident()}, '
-                f'args {args}, '
-                f'kwargs {kwargs}'
+                f'args {node}, '
             )
-            # on_loop(args, kwargs)
+            on_loop(node)
             time.sleep(1)
