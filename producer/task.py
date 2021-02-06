@@ -1,4 +1,4 @@
-from tasks_schedule.common.lib_wrap.meta_class import MetaClass
+from common.lib_wrap.meta_class import MetaClass
 
 
 class Task(MetaClass):
